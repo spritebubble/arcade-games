@@ -1,12 +1,9 @@
 using System;
 using SplashKitSDK;
 
-
-
 namespace TD
 {
-
-    class Player
+    public class Player
     {
         public int x;
         public int y;
@@ -22,7 +19,8 @@ namespace TD
             win = true;
         }
     }
-    class Enemy
+    
+    public class Enemy
     {
         public int x, y;
         public Enemy(Field field)
@@ -33,7 +31,7 @@ namespace TD
         }
     }
 
-    class Gem
+    public class Gem
     {
         public int x;
         public int y;
@@ -53,7 +51,7 @@ namespace TD
         //}
     }
 
-    class Field
+    public class Field
     {
         public int size = 10;
         int[,]? array;
