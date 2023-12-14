@@ -30,6 +30,7 @@ jobs:
                   cd $GITHUB_WORKSPACE
                   if [ "${GIT_BASE_REPO}" == "thoth-tech/arcade-games" ]; then
                     git remote add upstream https://github.com/thoth-tech/arcade-games.git
+                    git submodule update --recursive --remote
                     git fetch upstream
                     echo "Compare upstream ${GITHUB_BASE_REF} with origin ${GITHUB_HEAD_REF}"
                     declare DIRECTORIES=($(git diff --name-only --merge-base upstream/${GITHUB_BASE_REF} origin/${GITHUB_HEAD_REF} games | awk -F'/' '{print "games/" $2 "/"}' | sort -u))
